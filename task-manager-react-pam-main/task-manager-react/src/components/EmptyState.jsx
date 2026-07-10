@@ -4,7 +4,7 @@ function EmptyState() {
       <div className="empty-state-icon">📋</div>
       <p>No tasks yet. Add one above!</p>
     </div>
-  )
+  );
 }
 
 export default EmptyState
