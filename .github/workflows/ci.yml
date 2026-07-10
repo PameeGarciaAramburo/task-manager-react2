@@ -12,8 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     defaults:
-      run:
-        working-directory: ./task-manager-react
+      ruworking-directory: ./task-manager-react-pam-main/task-manager-react
 
     steps:
       - uses: actions/checkout@v4
@@ -22,7 +21,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: task-manager-react/package-lock.json
+          cache-dependency-path: task-manager-react-pam-main/task-manager-react/package-lock.json
 
       - run: npm ci
       - run: npm run lint
