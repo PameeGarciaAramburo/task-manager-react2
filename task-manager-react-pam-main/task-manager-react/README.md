@@ -32,4 +32,4 @@ PORT=
 
 ## Base de datos 🗄️
 
-El proyecto utiliza PostgreSQL con Prisma para gestionar la base de datos.
+El proyecto utiliza PostgreSQL con Prisma para gestionar la base de datos.# prueba de protección
