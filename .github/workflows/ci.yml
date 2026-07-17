@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     defaults:
-      working-directory: ./task-manager-react-pam-main/task-manager-react
+      run:
+        working-directory: ./task-manager-react-pam-main/task-manager-react
 
     steps:
       - uses: actions/checkout@v4
