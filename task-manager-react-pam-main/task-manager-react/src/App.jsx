@@ -8,7 +8,7 @@ import TaskInput from './components/TaskInput.jsx';
 function App() {
   const [tasks, setTasks] = useState([]);
   const [newTitle, setNewTitle] = useState("");
-  const prueba = 123;
+
 
   // Load tasks from backend
   function loadTasks() {
