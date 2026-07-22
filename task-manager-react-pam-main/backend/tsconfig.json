@@ -10,8 +10,10 @@
     "skipLibCheck": true,
     "ignoreDeprecations": "6.0"
   },
-
   "include": [
     "src/**/*"
+  ],
+  "exclude": [
+    "**/*.test.ts"
   ]
 }
