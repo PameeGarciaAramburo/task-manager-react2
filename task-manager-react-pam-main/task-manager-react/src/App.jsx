@@ -12,7 +12,7 @@ function App() {
 
   // Load tasks from backend
   function loadTasks() {
-    fetch("http://localhost:3000/tasks")
+    fetch("http://localhost:3001/tasks")
       .then(res => res.json())
       .then(data => setTasks(data));
   }
@@ -24,7 +24,7 @@ function App() {
   // POST - Create new task
   function addTask() {
     if (!newTitle.trim()) return;
-    fetch("http://localhost:3000/tasks", {
+    fetch("http://localhost:3001/tasks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title: newTitle })
@@ -36,14 +36,14 @@ function App() {
 
   // DELETE - Remove task
   function deleteTask(id) {
-    fetch(`http://localhost:3000/tasks/${id}`, {
+    fetch(`http://localhost:3001/tasks/${id}`, {
       method: "DELETE"
     }).then(() => loadTasks());
   }
 
   // PUT - Toggle completed
   function toggleTask(id) {
-    fetch(`http://localhost:3000/tasks/${id}`, {
+    fetch(`http://localhost:3001/tasks/${id}`, {
       method: "PUT"
     }).then(() => loadTasks());
   }
@@ -53,7 +53,7 @@ function App() {
     const completed = tasks.filter(t => t.completed);
     Promise.all(
       completed.map(t =>
-        fetch(`http://localhost:3000/tasks/${t.id}`, { method: "DELETE" })
+        fetch(`http://localhost:3001/tasks/${t.id}`, { method: "DELETE" })
       )
     ).then(() => loadTasks());
   }
