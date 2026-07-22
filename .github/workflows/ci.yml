@@ -65,13 +65,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
       - name: Install Railway CLI
         run: npm install -g @railway/cli
 
+      - name: Login to Railway
+        run: railway login --token "${{ secrets.RAILWAY_TOKEN }}"
+
       - name: Deploy
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-        run: |
-          railway up \
-            --service=${{ secrets.RAILWAY_SERVICE_ID }} \
-            --environment=production
+        run: railway up
