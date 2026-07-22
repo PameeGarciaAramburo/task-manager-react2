@@ -33,6 +33,9 @@ jobs:
     name: Backend - Lint & Build
     runs-on: ubuntu-latest
 
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
     defaults:
       run:
         working-directory: ./task-manager-react-pam-main/backend
@@ -47,5 +50,11 @@ jobs:
           cache-dependency-path: task-manager-react-pam-main/backend/package-lock.json
 
       - run: npm ci
+
+      - run: npx prisma generate
+
+      - run: npx prisma migrate deploy
+
       - run: npm run lint
+
       - run: npm run build
