@@ -7,6 +7,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req: Request, res: Response) => {
+  res.json({
+    message: "Task Manager API",
+    status: "running"
+  });
+});
+
 app.get("/health", (req: Request, res: Response) => {
   res.status(200).json({
     status: "ok"
