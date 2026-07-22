@@ -13,4 +13,4 @@ Pamela Navia Aramburo
 
 [![CI](https://github.com/PameeGarciaAramburo/task-manager-react2/actions/workflows/ci.yml/badge.svg)](https://github.com/PameeGarciaAramburo/task-manager-react2/actions/workflows/ci.yml)
 
-Proyecto del Diplomado Full Stack.
+Proyecto del Diplomado Full Stack
