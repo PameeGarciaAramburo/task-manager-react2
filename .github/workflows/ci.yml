@@ -57,3 +57,21 @@ jobs:
       - run: npm run lint
 
       - run: npm run build
+  deploy:
+    name: Deploy to Railway
+    needs: [frontend, backend]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli
+
+      - name: Deploy
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          railway up \
+            --service=${{ secrets.RAILWAY_SERVICE_ID }} \
+            --environment=production
